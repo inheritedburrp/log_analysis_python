@@ -1,0 +1,8 @@
+from sys import argv
+import linecache
+script,filename=argv
+log= open(filename)
+num_lines = sum(1 for line in log)
+p=log.readline()
+print num_lines
+#print p
