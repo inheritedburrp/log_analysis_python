@@ -1,8 +1,12 @@
 from sys import argv
-import linecache
 script,filename=argv
-log= open(filename)
-num_lines = sum(1 for line in log)
-p=log.readline()
-print num_lines
+log = open(filename)
+num_lines = sum([1 for line in log])
+#p = log.readline()
 #print p
+#line_count=1
+#print line_count, log.readline
+print "Number of lines -", num_lines
+log.seek(0)
+for line in log:
+    print line
