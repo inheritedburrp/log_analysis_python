@@ -1,28 +1,17 @@
 from sys import argv
-import logging
-import logging.handlers
 
 script, filename=argv
 
 def break_words(stuff):         
-	words = stuff.split(' ')
+	words = stuff.split()
 	return words
 
-def pop_first_word(words):
-	word = words.pop(0)
-	return word
 
-def pop_word(words):
-	word = words.pop(4)
-	return word
-	
-def pop_se_word(words):
-	word = words.pop(5)
-	return word
+f=open(filename)
+num_lines = sum(1 for lines in f)
+f.seek(0)
 
-log= open(filename)
-num_lines = sum(1 for lines in log)
-log.seek(0)
+
 time=[]
 duration=[]
 remotehost=[]
@@ -34,68 +23,50 @@ hierarchy=[]
 types=[]
 
 
-lines=log.readlines()
 
-for p in lines:
-
-	
-	
+for p in f:
 	sentence=break_words(p)
-
-
-
-
-	q=pop_first_word(sentence)
+	
+	q=sentence[0]
 	time.append(q)
 	
 
-
-
-
-
-	r=pop_word(sentence)
+	r=sentence[1]
 	duration.append(r)
 	
 
 
-
-	s=pop_word(sentence)
+	s=sentence[2]
 	remotehost.append(s)
 	
 
 
-
-	t=pop_word(sentence)
+	t=sentence[3]
 	code_status.append(t)
 	
-
-
-
-
-	u=pop_word(sentence)
+	
+	u=sentence[4]
 	bytes.append(u)
 	
+	
 
-
-	v=pop_word(sentence)
+	v=sentence[5]
 	method.append(v)
 	
 
 
-	w=pop_word(sentence)
+	w=sentence[6]
 	url.append(w)
 
 
 
-	x=pop_se_word(sentence)
+	x=sentence[7]
 	hierarchy.append(x)
 
 
-
-
-	y=pop_se_word(sentence)
-	types.append(y)
 	
+	y=sentence[8]
+	types.append(y)
 	
 	
 print time
