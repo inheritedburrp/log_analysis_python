@@ -5,6 +5,10 @@ script, filename=argv
 def break_words(stuff):         
 	words = stuff.split()
 	return words
+	
+def utc2local(utc):
+	temp = datetime.datetime.fromtimestamp(utc).strftime('%Y-%m-%d %H:%M:%S')
+	return temp
 
 
 f=open(filename)
@@ -27,54 +31,46 @@ types=[]
 for p in f:
 	sentence=break_words(p)
 	
-	q=sentence[0]
-	time.append(q)
+	if len(sentence)==10:
 	
-
-	r=sentence[1]
-	duration.append(r)
+		q_utc=sentence[0]
+		q=utc2local(float(q_utc))
+		time.append(q)
+		
 	
-
-
-	s=sentence[2]
-	remotehost.append(s)
-	
-
-
-	t=sentence[3]
-	code_status.append(t)
+		r=sentence[1]
+		duration.append(r)
+		
 	
 	
-	u=sentence[4]
-	bytes.append(u)
+		s=sentence[2]
+		remotehost.append(s)
+		
 	
 	
-
-	v=sentence[5]
-	method.append(v)
+		t=sentence[3]
+		code_status.append(t)
+		
+		
+		u=sentence[4]
+		bytes.append(u)
+		
+		
 	
-
-
-	w=sentence[6]
-	url.append(w)
-
-
-
-	x=sentence[7]
-	hierarchy.append(x)
-
-
-	
-	y=sentence[8]
-	types.append(y)
+		v=sentence[5]
+		method.append(v)
+		
 	
 	
-print time
-print duration
-print remotehost
-print code_status
-print bytes
-print method
-print url
-print hierarchy
-print types
+		w=sentence[6]
+		url.append(w)
+	
+	
+	
+		x=sentence[8]
+		hierarchy.append(x)
+	
+	
+		
+		y=sentence[9]
+		types.append(y)
