@@ -75,3 +75,5 @@ for p in f:
 		
 		y=sentence[9]
 		types.append(y)
+
+print time, duration,remotehost,code_status,bytes
