@@ -11,7 +11,6 @@ def utc2local(utc):
 	temp = datetime.datetime.fromtimestamp(utc).strftime('%Y-%m-%d %H:%M:%S')
 	return temp
 
-
 f=open(filename)
 num_lines = sum(1 for lines in f)
 f.seek(0)
@@ -76,4 +75,4 @@ for p in f:
 		y=sentence[9]
 		types.append(y)
 
-return time, duration,remotehost,code_status,bytes, method, url, hierarchy, types
+print time, duration,remotehost,code_status,bytes, method, url, hierarchy, types
