@@ -10,15 +10,6 @@ class RedisLogger(logging.Handler):
     self.port = port
     self.db = db
     self.r = Redis(host, port=port, db=db)
-  def emit(self, record):
-    try:
-      self.r.lpush(self.list_name, self.format(record))
-    except:
-      try:
-        self.r = Redis(self.host)
-        self.r.lpush(self.list_name, self.format(record))
-      except:
-        print "Failed to log on Redis queue"
 
 if __name__ == "__main__":
   import logging
