@@ -46,3 +46,33 @@ for p in f:
 		s=sentence[2]
 		remotehost.append(s)
 
+		
+	
+		t=sentence[3]
+		code_status.append(t)
+		
+		
+		u=sentence[4]
+		bytes.append(u)
+		
+		
+	
+		v=sentence[5]
+		method.append(v)
+		
+	
+	
+		w=sentence[6]
+		url.append(w)
+	
+	
+	
+		x=sentence[8]
+		hierarchy.append(x)
+	
+	
+		
+		y=sentence[9]
+		types.append(y)
+
+print time, duration,remotehost,code_status,bytes, method, url, hierarchy, types
